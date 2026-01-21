@@ -14,7 +14,7 @@ avoids the need to configure API keys or an OCI CLI profile.
 - Creates an **Internet Gateway** and updates the route table so that
   instances in the public subnet have outbound internet access.
 - Uses the **native OCI backend** for state management, stored in an OCI Object
-  Storage bucket (`terraform-demo-basics`) with versioning enabled.
+  Storage bucket (`terraform-demo-bucket`) with versioning enabled.
 - Designed to run in OCI Cloud Shell using current user credentials.
 
 ## Files
