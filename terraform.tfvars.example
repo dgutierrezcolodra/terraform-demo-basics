@@ -3,7 +3,7 @@
 # Replace the values below with your own OCIDs and region when copying to
 # terraform.tfvars.
 
-region = "eu-madrid-1"
+region = "eu-frankfurt-1"
 
 # Tenancy OCID
 tenancy_id = "ocid1.tenancy.oc1..exampleuniqueID"

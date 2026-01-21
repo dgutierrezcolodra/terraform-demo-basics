@@ -4,20 +4,18 @@ This repository contains a minimal **Terraform** configuration that uses the
 official [`terraform-oci-vcn`](https://github.com/oracle-terraform-modules/terraform-oci-vcn)
 module to provision a **Virtual Cloud Network (VCN)** with one public
 subnet in **Oracle Cloud Infrastructure (OCI)**.  It is designed to be run
-from **OCI Cloud Shell** using instance principal authentication, which
-avoids the need to configure API keys or an OCI CLI profile【505789648476797†L45-L54】.
+from **OCI Cloud Shell** using instance principal authentication, which
+avoids the need to configure API keys or an OCI CLI profile.
 
 ## Features
 
 - Provisions a VCN with a customizable CIDR block and associates a public
-  subnet【961716393103386†L2-L13】.
+  subnet.
 - Creates an **Internet Gateway** and updates the route table so that
   instances in the public subnet have outbound internet access.
-- Uses sensible defaults and a simple variable interface so that newcomers
-  can get started quickly.  The underlying module can also create NAT
-  gateways, service gateways and additional subnets when configured【961716393103386†L2-L13】.
-- Designed to run in OCI Cloud Shell; authentication is handled by
-  instance principals automatically【505789648476797†L45-L54】.
+- Uses the **native OCI backend** for state management, stored in an OCI Object
+  Storage bucket (`terraform-demo-basics`) with versioning enabled.
+- Designed to run in OCI Cloud Shell using current user credentials.
 
 ## Files
 
@@ -85,8 +83,8 @@ terraform destroy
 
 - The **VCN** module can create additional networking components—such as NAT
   gateways, service gateways and local peering gateways—by adjusting the
-  variables.  See the [module documentation](https://github.com/oracle-terraform-modules/terraform-oci-vcn) for details【961716393103386†L2-L13】.
-- Running this demo in **Cloud Shell** takes advantage of instance principal
-  authentication; you do not need to manage API keys【505789648476797†L45-L54】.
+  variables.  See the [module documentation](https://github.com/oracle-terraform-modules/terraform-oci-vcn) for details.
+- Running this demo in **Cloud Shell** takes advantage of instance principal
+  authentication; you do not need to manage API keys.
 - Make sure that your tenancy and compartment IDs correspond to a region
   where you have permission to create network resources.

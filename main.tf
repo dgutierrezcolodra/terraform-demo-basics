@@ -1,15 +1,14 @@
 module "vcn" {
   # Use the official Oracle Terraform module to create a Virtual Cloud Network
   # https://github.com/oracle-terraform-modules/terraform-oci-vcn
-  source  = "github.com/oracle-terraform-modules/terraform-oci-vcn"
+  source = "github.com/oracle-terraform-modules/terraform-oci-vcn?ref=v3.6.0"
 
-  tenancy_id     = var.tenancy_id
   compartment_id = var.compartment_id
 
   # Prefix that will be prepended to resource names
   label_prefix = "demo"
   # Name of the VCN appended to the prefix
-  vcn_name     = "demo-vcn"
+  vcn_name = "demo-vcn"
 
   # Create an internet gateway and a public subnet to allow outbound access
   create_internet_gateway = true
