@@ -7,20 +7,29 @@ module "vcn" {
 
   # Prefix that will be prepended to resource names
   label_prefix = "demo"
-  # Name of the VCN appended to the prefix
-  vcn_name = "demo-vcn"
 
-  # Create an internet gateway and a public subnet to allow outbound access
+  # Name of the VCN
+  vcn_name = var.vcn_name
+
+  # VCN CIDR blocks
+  vcn_cidrs = var.vcn_cidrs
+
+  # Gateways configuration
   create_internet_gateway = true
+  create_nat_gateway      = true
+  create_service_gateway  = true
 
-  # Define a single public subnet.  The module uses the map keys as
-  # identifiers when naming the subnets.  If additional subnets are needed,
-  # duplicate the block with different CIDRs and names.
+  # Define subnets
   subnets = {
     public_subnet = {
-      cidr_block = "10.0.1.0/24"
+      cidr_block = var.public_subnet_cidr
       type       = "public"
-      name       = "demo-public"
+      name       = "${var.vcn_name}-public"
+    }
+    private_subnet = {
+      cidr_block = var.private_subnet_cidr
+      type       = "private"
+      name       = "${var.vcn_name}-private"
     }
   }
 }

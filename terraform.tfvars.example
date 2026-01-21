@@ -1,12 +1,9 @@
-### Example variable assignments for the OCI VCN demo
+region         = "eu-frankfurt-1"
+# tenancy_id is auto-detected via InstancePrincipal
+compartment_id = "ocid1.compartment.oc1..aaaaaaaayf64y3cc6utug3m2ipbwfxptamhzoqk2kkv4gkdiq44yaes3hc5a"
 
-# Replace the values below with your own OCIDs and region when copying to
-# terraform.tfvars.
-
-region = "eu-frankfurt-1"
-
-# Tenancy OCID
-tenancy_id = "ocid1.tenancy.oc1..exampleuniqueID"
-
-# Compartment OCID
-compartment_id = "ocid1.compartment.oc1..exampleuniqueID"
+# Customization
+vcn_name            = "my-project-vcn"
+vcn_cidrs           = ["10.0.0.0/16"]
+public_subnet_cidr  = "10.0.1.0/24"
+private_subnet_cidr = "10.0.2.0/24"

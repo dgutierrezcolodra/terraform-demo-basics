@@ -5,5 +5,25 @@ output "vcn_id" {
 
 output "public_subnet_id" {
   description = "OCID of the created public subnet"
-  value       = module.vcn.subnet_id["demo-public"]
+  value       = module.vcn.subnet_id["public_subnet"]
+}
+
+output "private_subnet_id" {
+  description = "OCID of the created private subnet"
+  value       = module.vcn.subnet_id["private_subnet"]
+}
+
+output "internet_gateway_id" {
+  description = "OCID of the Internet Gateway"
+  value       = module.vcn.internet_gateway_id
+}
+
+output "nat_gateway_id" {
+  description = "OCID of the NAT Gateway"
+  value       = module.vcn.nat_gateway_id
+}
+
+output "service_gateway_id" {
+  description = "OCID of the Service Gateway"
+  value       = module.vcn.service_gateway_id
 }
