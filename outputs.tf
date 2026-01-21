@@ -5,5 +5,5 @@ output "vcn_id" {
 
 output "public_subnet_id" {
   description = "OCID of the created public subnet"
-  value       = module.vcn.subnet_id[0]
+  value       = module.vcn.subnet_id["demo-public"]
 }

@@ -59,16 +59,28 @@ terraform init
 Run a plan to review the resources that will be created:
 
 ```bash
-terraform plan
+terraform plan -out=plan.tfplan
 ```
+
+### 4.5. Visualize dependencies (Optional)
+
+You can generate a visual representation of the resource dependencies to show to your
+client. This requires `Graphviz` installed:
+
+```bash
+terraform graph | dot -Tpng > graph.png
+```
+
+If you don't have Graphviz, you can paste the output of `terraform graph` into
+[Graphviz Online](https://dreampuf.github.io/GraphvizOnline/).
 
 ### 5. Apply the configuration
 
-Apply the configuration to create the VCN and subnet.  Terraform will prompt
-for confirmation before proceeding:
+Apply the configuration using the plan file created in the previous step. Note that
+when using a plan file, Terraform will not prompt for confirmation:
 
 ```bash
-terraform apply
+terraform apply plan.tfplan
 ```
 
 ### 6. (Optional) Destroy the environment
