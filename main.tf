@@ -24,12 +24,12 @@ module "vcn" {
     public_subnet = {
       cidr_block = var.public_subnet_cidr
       type       = "public"
-      name       = "${var.vcn_name}-public"
+      name       = var.public_subnet_name
     }
     private_subnet = {
       cidr_block = var.private_subnet_cidr
       type       = "private"
-      name       = "${var.vcn_name}-private"
+      name       = var.private_subnet_name
     }
   }
 }

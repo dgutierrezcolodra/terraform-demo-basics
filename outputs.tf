@@ -5,12 +5,12 @@ output "vcn_id" {
 
 output "public_subnet_id" {
   description = "OCID of the created public subnet"
-  value       = module.vcn.subnet_id["${var.vcn_name}-public"]
+  value       = module.vcn.subnet_id[var.public_subnet_name]
 }
 
 output "private_subnet_id" {
   description = "OCID of the created private subnet"
-  value       = module.vcn.subnet_id["${var.vcn_name}-private"]
+  value       = module.vcn.subnet_id[var.private_subnet_name]
 }
 
 output "internet_gateway_id" {

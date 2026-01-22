@@ -7,3 +7,7 @@ vcn_name            = "my-project-vcn"
 vcn_cidrs           = ["10.0.0.0/16"]
 public_subnet_cidr  = "10.0.1.0/24"
 private_subnet_cidr = "10.0.2.0/24"
+
+# Subnet Names (useful for individual drift management)
+public_subnet_name  = "my-public-subnet"
+private_subnet_name = "my-private-subnet"
