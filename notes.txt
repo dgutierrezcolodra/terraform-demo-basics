@@ -1,0 +1,18 @@
+terraform providers
+
+terraform plan -out=plan.tfplan
+
+terraform show plan.tfplan
+terraform show -no-color plan.tfplan > plan.txt
+terraform show -json plan.tfplan > plan.json
+
+terraform apply plan.tfplan
+
+terraform state list
+
+terraform state pull > terraform.tfstate
+terraform show terraform.tfstate
+terraform output
+
+terraform plan -var-file="dev.tfvars"
+terraform apply -var-file="dev.tfvars"

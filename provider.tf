@@ -4,7 +4,7 @@ terraform {
     bucket       = "terraform-demo-bucket"
     namespace    = "frctnpsoobr3"
     region       = "eu-frankfurt-1"
-    key          = "terraform.tfstate"
+    key          = "dev/terraform.tfstate"
     tenancy_ocid = "ocid1.tenancy.oc1..aaaaaaaacgomiinzmfduoro47jiq5byg2urp7rk7wgxs74gfqczvj6yau3sq"
   }
   required_providers {
